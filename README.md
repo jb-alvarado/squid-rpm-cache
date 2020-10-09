@@ -7,9 +7,7 @@ using only the filename instead of the complete URL i can use alternate mirrors 
 
 Build:
 
-    cd store_id_program && go build
-
-there is a alternative store_id_program(store_id_program.py) provided by user [didib](https://github.com/didib), that takes the linux distribution into acount.
+    cd store-id && cargo build --release
 
 squid.conf
 --------
