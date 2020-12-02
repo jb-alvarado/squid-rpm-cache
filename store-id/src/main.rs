@@ -4,7 +4,7 @@ use regex::Regex;
 
 fn main() {
     // TODO: update urls to handle the repodata metadata
-    let url_regex = Regex::new(r"[^/]+\.rpm").unwrap();
+    let url_regex = Regex::new(r"[^/]+(\.rpm|\.deb|\.iso)").unwrap();
 
     loop {
         let line: String = read!("{}\n");

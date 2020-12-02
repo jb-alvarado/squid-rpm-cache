@@ -21,13 +21,14 @@ plus the additional configuration:
 
     cache_dir ufs /var/spool/squid 10000 16 256
 
-    store_id_program /path/to/store_id_program
+    store_id_program /path/to/store-id
     store_id_children 5 startup=1
 
-    # have not seen a larger RPM yet
-    maximum_object_size 1 GB
+    maximum_object_size 3 GB
 
-    # cache RPMs only
-    acl rpm_only urlpath_regex \.rpm
-    cache allow rpm_only
+    # cache RPMs DEBs ISOs only
+    acl mypackages urlpath_regex \.rpm
+    acl mypackages urlpath_regex \.deb
+    acl mypackages urlpath_regex \.iso
+    cache allow mypackages
     cache deny all
